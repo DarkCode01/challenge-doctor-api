@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "prepare": "husky install",
-    "sequelize": "sequelize-cli"
+    "test": "jest",
+    "test:factory": "jest factories"
   },
   "dependencies": {
     "debug": "~2.6.9",
