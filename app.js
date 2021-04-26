@@ -2,7 +2,7 @@
 
 const express = require('express');
 const logger = require('morgan');
-
+const database = require('./database/models/index');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
