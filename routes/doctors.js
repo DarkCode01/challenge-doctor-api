@@ -28,19 +28,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
-  try {
-    const doctor = await controllers.create(req.body);
-
-    res.status(201).json({
-      result: doctor,
-    });
-  } catch (err) {
-    console.log(err);
-    res.send('erroror');
-  }
-});
-
 router.post('/:id/review', async (req, res) => {
   try {
     const review = await controllers.review(req.params.id, req.body);

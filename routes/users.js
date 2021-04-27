@@ -2,7 +2,6 @@ const express = require('express');
 const controllers = require('../controllers/user');
 const router = express.Router();
 
-/* GET users listing. */
 router.post('/', async (req, res) => {
   try {
     const user = await controllers.create(req.body);
