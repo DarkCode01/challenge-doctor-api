@@ -6,11 +6,14 @@ module.exports = {
   },
   get: async (filters) => {
     return Doctor.findAll({
-      include: ['location', 'reviews'],
+      include: ['location', 'reviews', 'specialities'],
     });
   },
   getDetails: async (id) => {
-    return Doctor.findOne({ id });
+    return Doctor.findOne({
+      where: { id },
+      include: ['specialities', 'reviews', 'location'],
+    });
   },
   review: async (id, body) => {
     return Review.create({ doctor_id: id, ...body });
