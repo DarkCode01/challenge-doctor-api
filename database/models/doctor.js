@@ -8,9 +8,12 @@ module.exports = (sequelize, DataTypes) => {
         as: 'location',
       });
 
-      this.hasMany(models.Speciality, { as: 'specialities' });
+      this.hasMany(models.Speciality, {
+        as: 'specialities',
+        foreignKey: 'doctor_id',
+      });
 
-      this.hasMany(models.Review, { as: 'reviews' });
+      this.hasMany(models.Review, { as: 'reviews', foreignKey: 'doctor_id' });
     }
   }
   Doctor.init(

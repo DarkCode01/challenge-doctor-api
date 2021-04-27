@@ -1,9 +1,19 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const controllers = require('../controllers/user');
+const router = express.Router();
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
+router.post('/', async (req, res) => {
+  try {
+    const user = await controllers.create(req.body);
+
+    res.status(201).json({
+      result: user,
+    });
+  } catch (err) {
+    console.log(err);
+    res.send('erroor');
+  }
 });
 
 module.exports = router;

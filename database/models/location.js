@@ -3,8 +3,8 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Location extends Model {
     static associate(models) {
-      this.hasMany(models.Doctor, { as: 'doctors' });
-      this.hasMany(models.User, { as: 'users' });
+      this.hasMany(models.Doctor, { as: 'doctors', foreignKey: 'location_id' });
+      this.hasMany(models.User, { as: 'users', foreignKey: 'location_id' });
     }
   }
 
