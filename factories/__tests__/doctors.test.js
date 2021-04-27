@@ -1,7 +1,7 @@
 const factory = require('../doctors');
 
 describe('Doctor factory', () => {
-  test('Generate a simple Doctor', () => {
+  it('Generate a simple Doctor', () => {
     const doctor = factory.doctor([1, 2, 4, 5]);
 
     expect(doctor).toEqual({
@@ -13,7 +13,7 @@ describe('Doctor factory', () => {
     });
   });
 
-  test('Generate list odf Doctor', () => {
+  it('Generate list odf Doctor', () => {
     const doctors = factory.generate([1, 2, 3, 4, 5], 3);
 
     expect(doctors).toHaveLength(3);

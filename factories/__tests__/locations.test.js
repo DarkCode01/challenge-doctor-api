@@ -1,7 +1,7 @@
 const factory = require('../locations');
 
 describe('Location factory', () => {
-  test('Generate a simple Location', () => {
+  it('Generate a simple Location', () => {
     const location = factory.location([1, 2, 4, 5]);
 
     expect(location).toEqual({
@@ -12,7 +12,7 @@ describe('Location factory', () => {
     });
   });
 
-  test('Generate list of Location', () => {
+  it('Generate list of Location', () => {
     const locations = factory.generate(3);
 
     expect(locations).toHaveLength(3);

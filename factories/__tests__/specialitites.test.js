@@ -1,7 +1,7 @@
 const factory = require('../specialities');
 
 describe('Speciality factory', () => {
-  test('Generate a simple Speciality', () => {
+  it('Generate a simple Speciality', () => {
     const speciality = factory.speciality([1, 2, 4, 5]);
 
     expect(speciality).toEqual({
@@ -14,7 +14,7 @@ describe('Speciality factory', () => {
     });
   });
 
-  test('Generate list of Speciality', () => {
+  it('Generate list of Speciality', () => {
     const specialities = factory.generate([1, 2, 3, 4, 5], 3);
 
     expect(specialities).toHaveLength(3);
