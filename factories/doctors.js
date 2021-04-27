@@ -9,10 +9,11 @@ const doctor = (locations) => ({
 });
 
 module.exports = {
+  doctor,
   generate: (locations, count) => {
     let doctors = [];
 
-    for (let i = 0; i <= count; i++) {
+    for (let i = 0; i < count; i++) {
       doctors.push(doctor(locations));
     }
 

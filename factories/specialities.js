@@ -10,10 +10,11 @@ const speciality = (doctors) => ({
 });
 
 module.exports = {
+  speciality,
   generate: (doctors, count) => {
     let specialities = [];
 
-    for (let i = 0; i <= count; i++) {
+    for (let i = 0; i < count; i++) {
       specialities.push(speciality(doctors));
     }
 

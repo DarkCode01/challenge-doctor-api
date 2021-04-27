@@ -8,10 +8,11 @@ const location = () => ({
 });
 
 module.exports = {
+  location,
   generate: (count) => {
     let locations = [];
 
-    for (let i = 0; i <= count; i++) {
+    for (let i = 0; i < count; i++) {
       locations.push(location());
     }
 
