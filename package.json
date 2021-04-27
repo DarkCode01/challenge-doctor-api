@@ -6,9 +6,10 @@
     "start": "nodemon ./bin/www",
     "prepare": "husky install",
     "test:init": "jest --init",
-    "test:factorie": "jest factories",
     "migrate": "npx sequelize-cli db:migrate",
     "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
+    "seed": "npx sequelize-cli db:seed",
+    "seed:reset": "npx sequelize-cli db:seed:undo:all && npm run seed",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
     "pretest": "cross-env NODE_ENV=test npm run migrate:reset"
   },

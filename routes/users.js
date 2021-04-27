@@ -10,7 +10,6 @@ router.post('/', async (req, res) => {
       result: user,
     });
   } catch (err) {
-    console.log(err);
     res.send('erroor');
   }
 });
