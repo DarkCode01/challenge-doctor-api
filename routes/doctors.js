@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
       result: doctors,
     });
   } catch (err) {
-    console.log(err);
     res.send('erroror');
   }
 });
@@ -23,20 +22,6 @@ router.get('/:id', async (req, res) => {
       result: doctor,
     });
   } catch (err) {
-    console.log(err);
-    res.send('erroror');
-  }
-});
-
-router.post('/', async (req, res) => {
-  try {
-    const doctor = await controllers.create(req.body);
-
-    res.status(201).json({
-      result: doctor,
-    });
-  } catch (err) {
-    console.log(err);
     res.send('erroror');
   }
 });
@@ -49,7 +34,6 @@ router.post('/:id/review', async (req, res) => {
       result: review,
     });
   } catch (err) {
-    console.log(err);
     res.send('erororor');
   }
 });

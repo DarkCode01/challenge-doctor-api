@@ -1,4 +1,10 @@
-require('dotenv').config();
+const env = require('dotenv');
+
+// make path of file
+let path = process.env.NODE_ENV !== 'test' ? '.env' : '.env.test';
+
+// load variables
+env.config({ path });
 
 module.exports = {
   username: process.env.DATABASE_USERNAME,
