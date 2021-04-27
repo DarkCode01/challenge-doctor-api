@@ -2,9 +2,8 @@
 
 const express = require('express');
 const logger = require('morgan');
-const database = require('./database/models/index');
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const doctorRoutes = require('./routes/doctors');
+const userRoutes = require('./routes/users');
 
 const app = express();
 
@@ -12,7 +11,7 @@ app.use(logger());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/doctors', doctorRoutes);
+app.use('/users', userRoutes);
 
 module.exports = app;
