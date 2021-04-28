@@ -56,4 +56,17 @@ router.post('/:id/review', async (req, res) => {
   }
 });
 
+router.post('/:id/appointment', async (req, res) => {
+  try {
+    const appointment = await controllers.appointment(req.params.id, req.body);
+
+    res.status(201).json({
+      result: appointment,
+    });
+  } catch (err) {
+    console.log(err);
+    res.send('erororor');
+  }
+});
+
 module.exports = router;

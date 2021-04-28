@@ -1,4 +1,4 @@
-const { Doctor, Review } = require('../database/models/index');
+const { Doctor, Review, Appointment } = require('../database/models/index');
 
 module.exports = {
   get: async (filters) => {
@@ -14,6 +14,7 @@ module.exports = {
       include: [
         'specialities',
         'location',
+        'appointments',
         {
           model: Review,
           as: 'reviews',
@@ -24,5 +25,8 @@ module.exports = {
   },
   review: async (id, body) => {
     return Review.create({ doctor_id: id, ...body });
+  },
+  appointment: async (id, body) => {
+    return Appointment.create({ doctor_id: id, ...body });
   },
 };
