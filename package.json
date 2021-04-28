@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "prepare": "husky install",
     "test:init": "jest --init",
     "migrate": "npx sequelize-cli db:migrate",
