@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
       });
 
       this.hasMany(models.Review, { as: 'reviews', foreignKey: 'user_id' });
+      this.hasMany(models.Appointment, {
+        as: 'appointments',
+        foreignKey: 'user_id',
+      });
     }
   }
   User.init(
