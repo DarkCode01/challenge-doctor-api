@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
     const doctors = await controllers.get({
       limit: req.query.limit,
       skip: req.skip,
+      q: req.query.q,
     });
     const pages = Math.ceil(doctors.count / req.query.limit);
 
@@ -52,6 +53,7 @@ router.post('/:id/review', async (req, res) => {
       result: review,
     });
   } catch (err) {
+    console.log(err);
     res.send('erororor');
   }
 });
